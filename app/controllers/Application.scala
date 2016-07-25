@@ -84,9 +84,10 @@ object Application extends Controller {
 //      val runtime = new Date().getTime();
 //      val ip = "192.168.2." + rnd.nextInt(255);
 //      val msg = runtime + "," + nEvents + ",www.example.com," + ip;
-        val msg = "Message : " + rnd.nextInt(255);
-      val data = new KeyedMessage[String, String](topic,  msg);
-
+//        val msg = "Message : " + rnd.nextInt(255);
+//      val data = new KeyedMessage[String, String](topic,  msg);
+	val msg = """{"template_variables" : {"test_variable": "TESTING" },"numbers": "8867189427","template" : "test", "gateway": "EXOTEL"}"""
+	val data = new KeyedMessage[String,String](topic,msg);
         producer.send(data);
     }
 
