@@ -65,10 +65,10 @@ object Application extends Controller {
 //
 //          }
 //        )
-    val events = 10
+    val events = 1
     val topic = "sms"
     //val brokers = "127.0.0.1:9092"
-    val brokers = "52.74.2.115:9092"
+    val brokers = "52.74.2.115:9095"
     val rnd = new Random()
     val props = new Properties()
     props.put("metadata.broker.list", brokers)
@@ -86,7 +86,7 @@ object Application extends Controller {
 //      val msg = runtime + "," + nEvents + ",www.example.com," + ip;
 //        val msg = "Message : " + rnd.nextInt(255);
 //      val data = new KeyedMessage[String, String](topic,  msg);
-	val msg = """{"template_variables" : {"test_variable": "TESTING" },"numbers": "8867189427","template" : "test", "gateway": "EXOTEL"}"""
+	val msg = """{"template_variables" : {"test_variable": "TESTING" },"numbers": "8454911143","template" : "test", "gateway": "EXOTEL"}"""
 	val data = new KeyedMessage[String,String](topic,msg);
         producer.send(data);
     }
